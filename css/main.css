@@ -1,3 +1,4 @@
+
 :root {
   --background-color: #ebebeb;
   --nav-fundo: #dbdbdb;
@@ -12,6 +13,8 @@
   --nav-bg-topbar: #3fbbc0;
   --nav-color2: #ebebeb;
   --surface: #fff;
+  --accent-color: #3fbbc0;
+
 }
 
 body {
@@ -53,15 +56,17 @@ a {
   margin-right: 8px;
 }
 
-.header .cta-btn, .header .cta-btn:focus
-{
-  color: #195052;
-  background:#3fbbc0;
+.header .cta-btn,
+.header .cta-btn:focus {
+  color: #363636;
+  background: #3fbbc0;
   font-size: 14px;
   padding: 8px 20px;
   margin: 0 5px 0 30px;
   border-radius: 4px;
 }
+
+
 
 /* Nav menu Desktop = Responsivo */
 @media (min-width:1200px) {
@@ -275,7 +280,7 @@ a {
 }
 /* FIM Menu Mobile - MEDIA 1199px  */
 
-/* ------ HERO  --------- */
+/* ------ HERO -- Carousel --------- */
 .hero {
   padding: 0;
 }
@@ -321,10 +326,10 @@ margin-bottom: 50px;
 }
 
 @media (max-width: 1200px) {
-.hero .container {
-  margin-left: 50px;
-  margin-right: 50px;
-}
+  .hero .container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 }
 
 .hero h2 {
@@ -334,34 +339,31 @@ font-weight: 700;
 /* color: ; OPCIONAL */
 }
 
-.hero .carousel-control-prev
-{
+.hero .carousel-control-prev {
   justify-content: start;
 }
 
-.hero .carousel-control-next
-{
+.hero .carousel-control-next {
   justify-content: end;
 }
 
-.hero .carousel-control-next-icon, .hero .carousel-control-prev-icon
-{
+.hero .carousel-control-next-icon,
+.hero .carousel-control-prev-icon {
   background: #3fbbc0;
   font-size: 26px;
   color: red;
   border-radius: 50px;
-  transition: 0.3s;
+  transition: .3s;
   width: 54px;
   height: 54px;
   display: flex;
   align-items: center;
-  justify-content:center;
-}
+  justify-content: center;
+} 
 
-.hero .carousel-indicators
-{
+.hero .carousel-indicators {
   cursor: pointer;
-  background: rgb(97, 97, 97);
+  background: #444;
   width: 12px;
   height: 12px;
   opacity: 1;
@@ -371,8 +373,7 @@ font-weight: 700;
   transition: 0.3s;
 }
 
-.hero .carousel-indicators.active
-{
+.hero .carousel-indicators.active  {
   opacity: 1;
   background: red;
 }
@@ -382,4 +383,168 @@ font-weight: 700;
   .hero .carousel {
       min-height: 100vh;
   }
+}
+
+/*-------------------------------
+# Featured Services Section
+-------------------------------------*/
+
+.featured-services .service-item {
+  background: #fff;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+  padding: 50px 30px;
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.featured-services .service-item .icon {
+  margin-bottom: 10px;
+}
+
+.featured-services .service-item .icon i {
+  color: #3fbbc0;
+  font-size: 36px;
+  transition: ease-in-out 0.3s;
+}
+
+.featured-services .service-item h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.featured-services .service-item h4 a {
+  color: red;
+}
+
+
+.featured-services .service-item p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.featured-services .service-item:hover h4 a,
+.featured-services .service-item:hover .icon i,
+.featured-services .service-item:hover p {
+  color: whitesmoke;
+}
+
+.featured-services .service-item:hover:before { 
+  background:  #3fbbc0;
+  inset: 0;
+  border-radius: 0px;
+}
+
+.featured-services .service-item:before {
+  content: "";
+  position: absolute;
+  background:  #266e70;
+  z-index: -1;
+  inset: 100% 0 0 0 ;
+  transition: all 0.5s;
+}
+
+/*----------------------------
+# Global Sections
+-------------------------*/
+
+section,
+.section {
+  /* color: ; */
+  background: #e0e0e0;
+  padding: 60px 0;
+}
+
+@media (max-width: 1199px) {
+  section,
+  .section {
+    scroll-margin-top: 100px;
+  }
+}
+
+.accent-background {
+  background: #3fbbc0;
+  color: #e0e0e0;
+}
+
+/*--------------------------------
+# Global Section Titles - titulos
+----------------------------------------*/
+
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: black;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/* ---- About  ----- */
+.about .content h3 {
+  font-size: 1.75rem;
+  /* Multiplicar *16 ou Dividir /16 */
+  font-weight: 700;
+  color: #2293a0;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding: 10px 0 0 0;
+  display: flex;
+}
+
+.about .content ul i {
+  color: #00b0c4;
+  margin-right: 0.5rem;
+  line-height: 1.2;
+  font-size: 1.25rem;
+}
+
+.about .pulsating-play-btn {
+  position: absolute;
+  left: calc(50% - 47px);
+  top: calc(50% - 47px);
+}
+
+
+/* Pulsating Play Button
+------------------------------*/
+.pulsating-play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
